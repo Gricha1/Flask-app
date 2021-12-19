@@ -1,0 +1,54 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">          -->
+        <style type="text/css">
+           * { margin: 0; padding: 0; }
+           p { padding: 10px; }
+           #left { position: absolute; left: 0; top: 0; width: 70%; }
+           #right { position: absolute; right: 0; top: 0; width: 30%; }
+        </style>
+{% endblock %}
+
+
+{% block title %}
+Best Movie Actors
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container" id="left">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>Tell me your story</h1>
+      <p class="space-above"><strong>{{ message }}</strong></p>
+      {{ wtf.quick_form(form) }}
+
+    </div>
+  </div>
+</div>
+
+<div class="container" id="right">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h3>You can delete or show the story</h3>
+      {{ wtf.quick_form(form1) }}
+      <hr>
+      <h3> The stories you told me <h3>
+      <hr>
+      {% for user in cache%}
+      <p><b> by </b> {{user[0]}}</p>
+      <p><b> title </b> {{user[1]}}</p>
+      <hr>
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
