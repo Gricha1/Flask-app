@@ -1,10 +1,10 @@
 # Flask-app
 Записная книжка Flask + HTML + MySQL
-#Requirements
+# Requirements
 -> docker-compose
-#Install
+# Install
 1) git clone https://github.com/Gricha1/Flask-app && cd Flask-app
 2) docker-compose up
 
 use http://localhost:5000/start or http://0.0.0.0:5000/start
-#Run
+# Run
